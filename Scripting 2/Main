@@ -1,0 +1,21 @@
+from easygui import *
+from os.path import *
+
+a = enterbox(msg="username", title="username")
+ls = open("username.txt")
+
+ps = open("password.txt")
+filepath = 'username.txt'
+if a in ls.read():
+    b = passwordbox(msg="password", title="password")
+    if b in ps.read():
+        msgbox(msg="account unlocked")
+    else:
+        msgbox(msg="failure")
+else:
+    msgbox("failure")
+ps.close()
+ls.close()
+
+
+
